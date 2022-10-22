@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initComponents();
     }
 
     private void initComponents(){
@@ -38,29 +40,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         assignId(buttonAc,R.id.button_ac);
         assignId(buttonDot,R.id.button_dot);
 
-
-        assignId(buttonDot,R.id.button_dot);
-        assignId(buttonDot,R.id.button_dot);
-        assignId(buttonDot,R.id.button_dot);
-        assignId(buttonDot,R.id.button_dot);
-        assignId(buttonDot,R.id.button_dot);
-        assignId(buttonDot,R.id.button_dot);
-        assignId(buttonDot,R.id.button_dot);
-        assignId(buttonDot,R.id.button_dot);
-
-
-        button_number [0] = findViewById(R.id.button_0);
-        button_number [1] = findViewById(R.id.button_1);
-        button_number [2] = findViewById(R.id.button_2);
-        button_number [3] = findViewById(R.id.button_3);
-        button_number [4] = findViewById(R.id.button_4);
-        button_number [5] = findViewById(R.id.button_5);
-        button_number [6] = findViewById(R.id.button_6);
-        button_number [7] = findViewById(R.id.button_7);
-        button_number [8] = findViewById(R.id.button_8);
-        button_number [9] = findViewById(R.id.button_9);
-
-
+        assignId(button_number[0],R.id.button_0);
+        assignId(button_number[1],R.id.button_1);
+        assignId(button_number[2],R.id.button_2);
+        assignId(button_number[3],R.id.button_3);
+        assignId(button_number[4],R.id.button_4);
+        assignId(button_number[5],R.id.button_5);
+        assignId(button_number[6],R.id.button_6);
+        assignId(button_number[7],R.id.button_7);
+        assignId(button_number[8],R.id.button_8);
+        assignId(button_number[9],R.id.button_9);
     }
 
     private void assignId(Button button,int id){
@@ -70,6 +59,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+
+        Button button = (Button) view;
+        String buttonText = button.getText().toString();
+
+        String dataToCalculate = textViewSolution.getText().toString();
+
+        if (buttonText.equals("AC")){
+            textViewSolution.setText("0");
+            textViewResult.setText("0");
+            return;
+        }
+
+        if (buttonText.equals("=")){
+            textViewSolution.setText(textViewResult.getText());
+            return;
+        }
+
+        if (buttonText.equals("C")){
+            byte var0 = 0;
+            int var1 = dataToCalculate.length()-1;
+            dataToCalculate = dataToCalculate.substring(var0,var1);
+        }else {
+            dataToCalculate = dataToCalculate + buttonText;
+        }
+
+        textViewSolution.setText(dataToCalculate);
 
     }
 }

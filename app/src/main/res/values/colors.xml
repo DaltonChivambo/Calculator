@@ -10,4 +10,5 @@
     <color name="orange">#FF9800</color>
     <color name="red">#FF0000</color>
     <color name="small_gray">#F1F1F1</color>
+    <color name="brackets">#A1A1A1</color>
 </resources>
