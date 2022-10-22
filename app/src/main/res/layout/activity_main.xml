@@ -98,7 +98,7 @@
             android:layout_margin="12dp"
             android:id="@+id/button_divide"
             android:backgroundTint="@color/orange"
-            android:text="÷"
+            android:text="/"
             />
     </LinearLayout>
         <LinearLayout
