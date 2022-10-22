@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
-import org.mozilla.javascript.Undefined;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
