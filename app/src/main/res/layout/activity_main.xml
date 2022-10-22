@@ -292,7 +292,7 @@
                 android:textSize="32dp"
                 android:textColor="@color/white"
                 android:layout_margin="12dp"
-                android:id="@+id/button_DOT"
+                android:id="@+id/button_dot"
                 android:text="."
                 />
             <Button
