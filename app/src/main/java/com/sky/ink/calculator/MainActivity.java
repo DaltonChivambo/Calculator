@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (buttonText.equals("C")){
             byte var0 = 0;
             int var1 = dataToCalculate.length()-1;
-            dataToCalculate = dataToCalculate.substring(var0,var1);
+            if (!dataToCalculate.isEmpty())
+             dataToCalculate = dataToCalculate.substring(var0,var1);
         }else {
             dataToCalculate = dataToCalculate + buttonText;
         }
@@ -112,8 +113,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             return finalResult;
         }catch (Exception e){
-            return "Err";
-        }catch (UnknownError unknownError){
             return "Err";
         }
     }
